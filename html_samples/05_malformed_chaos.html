@@ -1,0 +1,51 @@
+<!-- Sample 5: maximally malformed / chaotic HTML (crash-resistance stress test) -->
+
+<!-- Broken DOCTYPE -->
+<!DOXTYPE super-invalid-doctype goes here
+<!-- Comment that is never closed
+<-- reversed comment arrow
+<!-- Comment with -- dashes -- inside -- it -->
+
+<!-- Tags with garbage in them -->
+< not-a-tag-because-of-space>
+<123startswithnumber>
+<    spaces-before-name>
+
+<!-- Attribute nightmare -->
+<div class= id="nospace-around-equals" data-x=unquoted#value! weird-attr>
+
+<!-- Nested quotes inside attributes -->
+<span title="He said 'hello' to her" data-json='{"key":"val"}'>Mixed quotes</span>
+
+<!-- Self-close on non-void element (XML-style) -->
+<div class="xml-style" />
+<p class="also-xml" />
+
+<!-- Empty attribute value -->
+<input type="text" value="" placeholder="">
+
+<!-- Tag with no name (stray angle brackets) -->
+<>
+</>
+< >
+</ >
+
+<!-- Severely truncated / abruptly ending tags -->
+<div class="truncated
+<p>Paragraph after truncated tag</p>
+
+<!-- Attribute with no name (just '=') -->
+<div ="broken">broken attr</div>
+
+<!-- Junk between tags -->
+<p>Text &&& more text <<<< raw angles >>>> here</p>
+
+<!-- Zero-length tags -->
+<></>
+
+<!-- Valid content sandwiched in the chaos — must survive -->
+<article id="survivor">
+  <h2>I survived the chaos</h2>
+  <p>This well-formed content should still parse correctly.</p>
+  <img src="ok.png" alt="fine" />
+</article>

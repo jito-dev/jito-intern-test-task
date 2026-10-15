@@ -1,0 +1,29 @@
+<!-- Sample 2: diverse attribute styles -->
+<form action="/submit" method="POST" id="signup-form">
+
+  <!-- Double-quoted attributes (standard) -->
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" placeholder="Enter username" required />
+
+  <!-- Single-quoted attributes -->
+  <input type='password' id='password' name='password' placeholder='Enter password' required />
+
+  <!-- Unquoted attributes (valid in HTML5 for simple values) -->
+  <input type=checkbox id=terms name=terms checked />
+  <label for=terms>I agree to the terms</label>
+
+  <!-- Boolean attributes: no value needed -->
+  <input type="text" id="readonly-field" value="Read only" readonly disabled />
+
+  <!-- Attribute with special characters in value -->
+  <a href="https://example.com?foo=bar&amp;baz=qux" target="_blank" rel="noopener noreferrer">
+    Visit Example
+  </a>
+
+  <!-- data-* custom attributes -->
+  <div data-user-id="42" data-role="admin" aria-label="User card" tabindex=0>
+    <span class="badge" style="color: red; font-weight: bold;">Admin</span>
+  </div>
+
+  <button type="submit" form="signup-form">Sign Up</button>
+</form>

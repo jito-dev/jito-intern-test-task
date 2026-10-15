@@ -1,0 +1,35 @@
+<!-- Sample 4: unclosed / misnested tags (robustness test) -->
+<div class="outer">
+  <p>This paragraph is never closed.
+  <span>This span is also never closed.
+    <b>Bold inside unclosed span
+
+  <!-- Closing a tag that was never opened -->
+  </table>
+
+  <ul>
+    <li>Item one
+    <li>Item two (previous li was never closed)
+    <li>Item three
+  </ul>
+
+  <!-- Deeply nested unclosed tags -->
+  <div>
+    <div>
+      <div>
+        <div>
+          <p>Four divs deep, none of the inner divs are closed properly.
+        </div>
+      <!-- only one </div> follows for three open divs -->
+
+  <!-- Misnested: <b> opened inside <i> but closed outside -->
+  <i><b>Misnested bold and italic</i></b>
+
+  <!-- Stray closing tag with no matching opener -->
+  </section>
+  </article>
+  </footer>
+
+  <p>Recovery paragraph — the parser should still attach this correctly.</p>
+
+</div>
