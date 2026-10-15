@@ -1,0 +1,55 @@
+<!-- Sample 3: void elements and comments -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Meta tags are void elements -->
+  <meta charset="UTF-8">
+  <meta name="description" content="A page full of void elements">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Link is also void -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Void Elements Demo</title>
+</head>
+<body>
+
+  <!-- ==========================================
+       VOID ELEMENTS
+       ========================================== -->
+
+  <!-- br: line break -->
+  <p>First line.<br>Second line.<br />Third line.</p>
+
+  <!-- hr: horizontal rule -->
+  <hr>
+  <hr />
+
+  <!-- img: always self-closes -->
+  <img src="photo.jpg" alt="A scenic photo" width="400" height="300">
+  <img src="icon.svg" alt="" role="presentation" />
+
+  <!-- input variants -->
+  <input type="text" value="hello">
+  <input type="hidden" name="csrf_token" value="abc123">
+  <input type="radio" name="color" value="red" checked>
+  <input type="radio" name="color" value="blue">
+
+  <!-- Embedded content -->
+  <video controls>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    <track kind="subtitles" src="subs.vtt" srclang="en" label="English">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- wbr: word break opportunity -->
+  <p>superlongword<wbr>thatmightneedbreaking</p>
+
+  <!--
+    Multi-line comment:
+    These should be parsed as comment nodes, not text.
+    <this-tag-inside-comment> should not be parsed as a tag.
+  -->
+  <p>End of void element demo.</p>
+
+</body>
+</html>
